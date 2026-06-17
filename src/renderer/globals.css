@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.14 0.03 239);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.21 0.03 239);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.18 0.03 239);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.79 0.12 210);
+  --primary-foreground: oklch(0.14 0.03 239);
+  --secondary: oklch(0.24 0.03 239);
+  --secondary-foreground: oklch(0.94 0.01 240);
+  --muted: oklch(0.24 0.02 239);
+  --muted-foreground: oklch(0.72 0.02 240);
+  --accent: oklch(0.66 0.09 190);
+  --accent-foreground: oklch(0.12 0.03 239);
+  --destructive: oklch(0.64 0.18 20);
+  --destructive-foreground: oklch(0.98 0.01 20);
+  --border: oklch(0.34 0.03 239 / 0.6);
+  --input: oklch(0.24 0.03 239);
+  --ring: oklch(0.78 0.1 205);
+  --chart-1: oklch(0.74 0.11 215);
+  --chart-2: oklch(0.71 0.13 175);
+  --chart-3: oklch(0.68 0.08 245);
+  --chart-4: oklch(0.77 0.15 140);
+  --chart-5: oklch(0.75 0.17 40);
+  --radius: 1rem;
+  --sidebar: oklch(0.18 0.03 239);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.79 0.12 210);
+  --sidebar-primary-foreground: oklch(0.14 0.03 239);
+  --sidebar-accent: oklch(0.27 0.03 239);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.34 0.03 239 / 0.6);
+  --sidebar-ring: oklch(0.78 0.1 205);
+}
+
+.dark {
+  --background: oklch(0.14 0.03 239);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.21 0.03 239);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.18 0.03 239);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.79 0.12 210);
+  --primary-foreground: oklch(0.14 0.03 239);
+  --secondary: oklch(0.24 0.03 239);
+  --secondary-foreground: oklch(0.94 0.01 240);
+  --muted: oklch(0.24 0.02 239);
+  --muted-foreground: oklch(0.72 0.02 240);
+  --accent: oklch(0.66 0.09 190);
+  --accent-foreground: oklch(0.12 0.03 239);
+  --destructive: oklch(0.64 0.18 20);
+  --destructive-foreground: oklch(0.98 0.01 20);
+  --border: oklch(0.34 0.03 239 / 0.6);
+  --input: oklch(0.24 0.03 239);
+  --ring: oklch(0.78 0.1 205);
+  --chart-1: oklch(0.74 0.11 215);
+  --chart-2: oklch(0.71 0.13 175);
+  --chart-3: oklch(0.68 0.08 245);
+  --chart-4: oklch(0.77 0.15 140);
+  --chart-5: oklch(0.75 0.17 40);
+  --sidebar: oklch(0.18 0.03 239);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.79 0.12 210);
+  --sidebar-primary-foreground: oklch(0.14 0.03 239);
+  --sidebar-accent: oklch(0.27 0.03 239);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.34 0.03 239 / 0.6);
+  --sidebar-ring: oklch(0.78 0.1 205);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    @apply border-border outline-ring/50 antialiased;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    user-select: none;
+    scroll-behavior: smooth;
+    -webkit-app-region: no-drag;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family:
+      Aptos, Bahnschrift, "Segoe UI Variable Display", "Segoe UI", sans-serif;
+    background:
+      linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 30%),
+      linear-gradient(72deg, rgba(132, 204, 22, 0.12), transparent 32%),
+      linear-gradient(290deg, rgba(56, 189, 248, 0.1), transparent 38%),
+      linear-gradient(160deg, #080a0d 0%, #171b1b 48%, #08090c 100%);
+    @apply bg-background text-foreground;
+  }
+
+  body.roi-selector-mode {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  body.roi-selector-mode::before {
+    opacity: 0;
+  }
+
+  body.game-overlay-mode {
+    background: transparent;
+  }
+
+  body.game-overlay-mode::before {
+    opacity: 0;
+  }
+
+  body::before {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    background:
+      linear-gradient(125deg, rgba(255, 255, 255, 0.07), transparent 36%),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.015) 0,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 1px,
+        transparent 120px
+      );
+    mix-blend-mode: screen;
+    opacity: 0.75;
+  }
+
+  #app {
+    display: block;
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ::selection {
+    color: white;
+    background: rgba(103, 232, 249, 0.3);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.45);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgba(103, 232, 249, 0.75),
+      rgba(56, 189, 248, 0.45)
+    );
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+  }
+}

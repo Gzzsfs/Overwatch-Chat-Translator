@@ -1,0 +1,32 @@
+{
+  "name": "overwatch-translation-proxy",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && node -e \"require('fs').copyFileSync('src/schema.sql','dist/schema.sql')\"",
+    "start": "node dist/index.js",
+    "migrate": "tsx src/migrate.ts",
+    "create-user": "tsx src/cli.ts create-user",
+    "reset-password": "tsx src/cli.ts reset-password",
+    "disable-user": "tsx src/cli.ts disable-user",
+    "enable-user": "tsx src/cli.ts enable-user",
+    "revoke-device": "tsx src/cli.ts revoke-device"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/helmet": "^13.0.2",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "ioredis": "^5.8.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/pg": "^8.16.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

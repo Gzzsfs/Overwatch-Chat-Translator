@@ -1,15 +1,12 @@
+name: Release
+
 on:
   push:
-    tags: ["*"]
+    tags: ["v*"]
 
 jobs:
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -22,27 +19,11 @@ jobs:
           node-version: 20
           cache: "pnpm"
       - run: pnpm install
-
-      - name: apt-update
-        if: startsWith(matrix.os, 'ubuntu-latest')
-        run: sudo apt-get update
-
-      - name: autoremove
-        if: startsWith(matrix.os, 'ubuntu-latest')
-        run: sudo apt autoremove
-
-      - name: Install libarchive rpm on Linux
-        if: startsWith(matrix.os, 'ubuntu-latest')
-        run: sudo apt-get install libarchive-tools rpm
+      - run: pnpm prepare:ocr-runtime
 
       - name: Release Electron app
         uses: daltonmenezes/action-electron-builder@v1.0.1
         with:
           package_manager: "pnpm"
-          # GitHub token, automatically provided to the action
-          # (No need to define this secret in the repo settings)
-          github_token: ${{ secrets.github_token }}
-
-          # If the commit is tagged with a version (e.g. "v1.0.0"),
-          # release the app after building
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           release: true

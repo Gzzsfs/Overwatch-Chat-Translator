@@ -2,7 +2,7 @@
   "displayName": "守望先锋聊天翻译器",
   "name": "overwatch-chat-translator",
   "description": "A local OCR overlay for translating Overwatch chat messages.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./node_modules/.dev/main/index.mjs",
   "resources": "src/resources",
   "author": {

@@ -45,9 +45,6 @@ const extraResources = [
             '**/*',
             '!**/__pycache__/**',
             '!**/*.pyc',
-            '!**/pip/**',
-            '!**/setuptools/**',
-            '!**/wheel/**',
           ],
         },
       ]

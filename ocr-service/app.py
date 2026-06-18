@@ -60,7 +60,15 @@ single_ocr = PaddleOcrEngine()
 
 def dependency_status() -> dict[str, bool]:
     status: dict[str, bool] = {}
-    for module_name in ["paddleocr", "paddle", "mss", "PIL", "httpx", "numpy"]:
+    for module_name in [
+        "paddleocr",
+        "paddle",
+        "setuptools",
+        "mss",
+        "PIL",
+        "httpx",
+        "numpy",
+    ]:
         try:
             __import__(module_name)
             status[module_name] = True
